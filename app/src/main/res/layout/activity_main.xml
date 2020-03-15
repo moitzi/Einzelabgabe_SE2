@@ -12,7 +12,7 @@
         android:layout_height="63dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/cambo"
-        android:text="Sent"
+        android:text="Send"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

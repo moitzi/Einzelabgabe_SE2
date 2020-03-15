@@ -23,6 +23,17 @@ public class MainActivity extends AppCompatActivity {
                 TextView result = (TextView) findViewById((R.id.textView));
 
                 String num = MatNr.getText().toString();
+
+                Client TCP = new Client(num);
+                TCP.start();
+
+                try {
+                    TCP.join();
+                } catch (InterruptedException exception) {
+                    exception.printStackTrace();
+                }
+                result.setText(TCP.modifiedSentence);
+
                 char[] array = new char[num.length()];
 
                 for (int i = 0; i < array.length; i++) {
@@ -49,11 +60,12 @@ public class MainActivity extends AppCompatActivity {
                         } else if (array[j] == '9') {
                             array[j] = 'i';
                         }
-                        String solution = String.valueOf(array[i]);
+                        String solution = String.valueOf(array);
                         result.setText(solution);
+
                     }
                 }
             }
         });
     }
-};
+}
